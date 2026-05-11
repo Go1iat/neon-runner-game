@@ -19,5 +19,19 @@ body {
 
 canvas {
     display: block;
-    background-color: #1e293b; /* Fondo de la tarjeta */
+    background-color: #1e293b;
+    /* Ajustes para móviles */
+    max-width: 95vw;  /* Que no ocupe más del 95% del ancho de la pantalla */
+    max-height: 70vh; /* Que no sea demasiado alto para el teléfono */
+    width: auto;
+    height: auto;
+}
+
+#game-container {
+    position: relative;
+    border: 2px solid #38bdf8;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
