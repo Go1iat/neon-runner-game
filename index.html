@@ -9,29 +9,18 @@
 <body>
 
     <div id="game-container">
-        canvas {
-    display: block;
-    background-color: #1e293b;
-    /* Ajustes para móviles */
-    max-width: 95vw;  /* Que no ocupe más del 95% del ancho de la pantalla */
-    max-height: 70vh; /* Que no sea demasiado alto para el teléfono */
-    width: auto;
-    height: auto;
-}
+        <canvas id="gameCanvas"></canvas>
 
-#game-container {
-    position: relative;
-    border: 2px solid #38bdf8;
-    box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-<div id="pantalla-game-over" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(15, 23, 42, 0.9); border: 2px solid #ff0055; padding: 40px; text-align: center; border-radius: 15px; box-shadow: 0 0 30px rgba(255, 0, 85, 0.4); z-index: 10;">
+        <div id="pantalla-game-over" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(15, 23, 42, 0.9); border: 2px solid #ff0055; padding: 40px; text-align: center; border-radius: 15px; box-shadow: 0 0 30px rgba(255, 0, 85, 0.4); z-index: 10;">
     <h1 style="color: #ff0055; margin-bottom: 10px; font-size: 40px;">PERDISTE</h1>
     <p style="color: white; font-size: 20px;">Puntuación: <span id="puntuacion-final">0</span></p>
-    <p style="color: #94a3b8; margin-top: 20px; font-size: 14px;">Reiniciando en 4 segundos...</p>
+    <p style="color: #94a3b8; margin-top: 20px; font-size: 14px;">Reiniciando en 3 segundos...</p>
 </div>
+        <div id="score-board" style="position: absolute; top: 10px; left: 10px; font-size: 20px; font-weight: bold; color: #38bdf8;">
+            Puntos: <span id="score">0</span>
+        </div>
+    </div>
+
     <script src="game.js"></script>
 </body>
 </html>
