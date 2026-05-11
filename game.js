@@ -110,11 +110,25 @@ const sonidoChoque = new Audio('perder.mp3');
 // Iniciar el juego
 actualizar();
 
-// Escuchar cuando el usuario presiona una tecla
-window.addEventListener('keydown', (evento) => {
-    if (evento.code === 'Space' && jugador.enSuelo) {
-        sonidoSalto.play(); // <--- AGREGA ESTO
+// Función única para saltar (así no repetimos código)
+function saltar() {
+    if (jugador.enSuelo) {
+        sonidoSalto.play();
         jugador.dy = -jugador.salto;
         jugador.enSuelo = false;
     }
+}
+
+// Escuchar el teclado (PC)
+window.addEventListener('keydown', (evento) => {
+    if (evento.code === 'Space') {
+        saltar();
+    }
 });
+
+// Escuchar el toque en la pantalla (Móvil)
+window.addEventListener('touchstart', (evento) => {
+    // Evita que el teléfono haga zoom o scroll al intentar saltar
+    evento.preventDefault(); 
+    saltar();
+}, { passive: false });
